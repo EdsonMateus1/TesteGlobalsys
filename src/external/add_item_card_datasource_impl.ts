@@ -5,6 +5,7 @@ import { ItemCard } from "@/domain/entities/item_card_model";
 export class CardItemDatasource implements IAddItemCardDatasource {
   private itemCard: ItemCardModel[] = []
   async addItemCard(itemCard: ItemCardModel): Promise<any> {
-    return await [this.itemCard];
+    this.itemCard.push(itemCard) // chamada api
+    return await this.itemCard;
   }
 }

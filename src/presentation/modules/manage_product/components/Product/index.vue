@@ -1,11 +1,16 @@
 <template>
-  <div class="product"></div>
+  <div class="product">
+    teete
+
+    <button @click.prevent="addItemCard">add</button>
+  </div>
 </template>
 
 <script lang="ts">
 import { ItemCardModel } from "@/data/model/item_card_model_impl";
-import { Vue, Prop } from "vue-property-decorator";
+import { Vue, Prop, Component } from "vue-property-decorator";
 
+@Component({})
 export default class Product extends Vue {
   @Prop({ required: true })
   available!: boolean;
@@ -24,8 +29,8 @@ export default class Product extends Vue {
     const itemCard = new ItemCardModel(
       this.name as string,
       this.image as string,
-      this.pricePromotional,
-      0
+      this.priceStock,
+      1
     );
     await this.$store.dispatch("addItemCard", itemCard);
   }
