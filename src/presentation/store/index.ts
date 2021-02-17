@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import { CardController } from "./controller_card_state";
+import  CardController  from "./controller_card_state";
 
 Vue.use(Vuex);
 
