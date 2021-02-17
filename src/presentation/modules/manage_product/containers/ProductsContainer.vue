@@ -1,18 +1,22 @@
 <template>
-  <div class="container-products"></div>
+  <div class="container-products">
+    {{ pruducts }}
+  </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component, Prop } from "vue-property-decorator";
-import { IGetProduct } from "@/interfaces/get_product_interface";
+import { IGetProduct } from "@/domain/usecases/get_product";
+import { Product } from "@/domain/entities/product_model";
 
 @Component({})
 export default class ProductsContainer extends Vue {
   @Prop({ required: true })
   private getProduct!: IGetProduct;
+  private pruducts: Array<Product | never> = [];
+
   async mounted() {
-    const res = await this.getProduct.getProduct();
-    console.log(res);
+    this.pruducts = await this.getProduct.getProduct();
   }
 }
 </script>
