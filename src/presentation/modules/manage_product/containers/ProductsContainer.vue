@@ -1,6 +1,7 @@
 <template>
   <div class="container-products">
-    {{ this.pruducts[0]}}
+    {{ this.pruducts[0] }}
+    {{ cardController}}
   </div>
 </template>
 
@@ -12,8 +13,9 @@ import { ProductModel } from "@/data/model/product_model_impl";
 @Component({})
 export default class ProductsContainer extends Vue {
   @Prop({ required: true })
-  private getProduct!: IGetProduct;
+  readonly getProduct!: IGetProduct;
   private pruducts: Array<ProductModel | never> = [];
+  private cardController = this.$store.state.CardController;
 
   async mounted() {
     this.pruducts = await this.getProduct.getProduct();

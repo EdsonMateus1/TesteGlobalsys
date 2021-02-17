@@ -1,13 +1,13 @@
 import { ItemCard } from "@/domain/entities/item_card_model";
 import { AddItemCardRepository } from "@/domain/repositories/add_item_card_repository";
-import { AddItemCardDatasource } from "../datasources/add_item_card_datasource";
+import { IAddItemCardDatasource } from "../datasources/add_item_card_datasource";
 
-export class GetRepositoryImpl implements AddItemCardRepository {
-  private _datasource: AddItemCardDatasource;
-  constructor(datasource: AddItemCardDatasource) {
+export class AddCardItemRepositoryImpl implements AddItemCardRepository {
+  private _datasource: IAddItemCardDatasource;
+  constructor(datasource: IAddItemCardDatasource) {
     this._datasource = datasource;
   }
-  addItemCard(itemCard: ItemCard): void {
-    this._datasource.addItemCard(itemCard);
+  async addItemCard(itemCard: ItemCard): Promise<any> {
+    return await this._datasource.addItemCard(itemCard);
   }
 }
