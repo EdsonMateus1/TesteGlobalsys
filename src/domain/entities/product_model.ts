@@ -1,4 +1,4 @@
-export interface Product {
+export interface IProduct {
   available: boolean;
   image: String;
   name: String;

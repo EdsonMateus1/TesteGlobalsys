@@ -13,5 +13,10 @@ import { factoryGetProduct } from "../../main/factory";
 })
 export default class Home extends Vue {
   private getProduct = factoryGetProduct();
+
+  mounted() {
+  //  console.log(this.$store.state);
+    
+  }
 }
 </script>
