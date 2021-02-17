@@ -7,7 +7,7 @@ export class AddCardItemRepositoryImpl implements AddItemCardRepository {
   constructor(datasource: IAddItemCardDatasource) {
     this._datasource = datasource;
   }
-  async addItemCard(itemCard: ItemCard): Promise<any> {
+  async addItemCard(itemCard: ItemCard): Promise<ItemCard[]> {
     return await this._datasource.addItemCard(itemCard);
   }
 }

@@ -34,6 +34,10 @@ export default class Product extends Vue {
     );
     await this.$store.dispatch("addItemCard", itemCard);
   }
+  mounted() {
+    console.log(this.name);
+    
+  }
 }
 </script>
 

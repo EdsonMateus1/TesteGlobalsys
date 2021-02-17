@@ -10,7 +10,7 @@ export class AddItemCard implements IAddItemCard {
   constructor(repository: AddItemCardRepository) {
     this._repository = repository;
   }
-  async addItemCard(itemCard: ItemCard): Promise<any> {
+  async addItemCard(itemCard: ItemCard): Promise<ItemCard[]> {
     return await this._repository.addItemCard(itemCard);
   }
 }
