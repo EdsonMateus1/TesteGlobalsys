@@ -1,13 +1,13 @@
 <template>
-  <div class="container-products">
-     ola
+  <div class="product">
+     
   </div>
 </template>
 
 <script lang="ts">
 import { Vue } from "vue-property-decorator";
 
-export default class ProductsContainer extends Vue {}
+export default class Product extends Vue {}
 </script>
 
 
