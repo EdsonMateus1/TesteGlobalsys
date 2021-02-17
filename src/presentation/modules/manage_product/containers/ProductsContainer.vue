@@ -17,8 +17,6 @@ export default class ProductsContainer extends Vue {
 
   async mounted() {
     this.pruducts = await this.getProduct.getProduct();
-    console.log(this.pruducts[0].priceMember);
-    
   }
 }
 </script>
