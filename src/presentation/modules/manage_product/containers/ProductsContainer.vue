@@ -1,7 +1,7 @@
 <template>
   <div class="container-products">
-    {{ this.pruducts[0] }}
-    {{ cardController}}
+    {{ }}
+    {{ cardController.cardItems }}
   </div>
 </template>
 
@@ -9,6 +9,7 @@
 import { Vue, Component, Prop } from "vue-property-decorator";
 import { IGetProduct } from "@/domain/usecases/get_product";
 import { ProductModel } from "@/data/model/product_model_impl";
+import { ItemCardModel } from "@/data/model/item_card_model_impl";
 
 @Component({})
 export default class ProductsContainer extends Vue {
@@ -19,6 +20,8 @@ export default class ProductsContainer extends Vue {
 
   async mounted() {
     this.pruducts = await this.getProduct.getProduct();
+    const cardItem = new ItemCardModel("teste", "teste", 1, 1);
+    this.$store.dispatch("addItemCard",cardItem);
   }
 }
 </script>
