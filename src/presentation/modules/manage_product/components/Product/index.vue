@@ -1,7 +1,5 @@
 <template>
   <div class="product">
-    teete
-
     <button @click.prevent="addItemCard">add</button>
   </div>
 </template>
@@ -33,10 +31,6 @@ export default class Product extends Vue {
       1
     );
     await this.$store.dispatch("addItemCard", itemCard);
-  }
-  mounted() {
-    console.log(this.name);
-    
   }
 }
 </script>

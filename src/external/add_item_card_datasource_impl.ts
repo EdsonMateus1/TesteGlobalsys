@@ -1,9 +1,9 @@
 import { IAddItemCardDatasource } from "@/data/datasources/add_item_card_datasource";
 import { ItemCardModel } from "@/data/model/item_card_model_impl";
-import { ItemCard } from "@/domain/entities/item_card_model";
+import { itemCardMoke } from "../main/mokes/item_card_moke";
 
 export class CardItemDatasource implements IAddItemCardDatasource {
-  private itemCard: ItemCardModel[] = [];
+  private itemCard: ItemCardModel[] = itemCardMoke;
   private existsItemCard: any;
   async addItemCard(itemCard: ItemCardModel): Promise<ItemCardModel[]> {
     this.existsItemCard = this.itemCard.find((e) => {

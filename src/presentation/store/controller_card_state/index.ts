@@ -2,6 +2,7 @@ import { ItemCardModel } from "@/data/model/item_card_model_impl";
 import { IAddItemCard } from "@/domain/usercases/add_item_card";
 import { StoreOptions } from "vuex";
 import { factoryAddCardItem } from "../../../main/factorys/index";
+import { itemCardMoke } from "../../../main/mokes/item_card_moke";
 
 interface State {
   cardItems: ItemCardModel[];
@@ -9,7 +10,7 @@ interface State {
 
 export const CardController: StoreOptions<State> = {
   state: {
-    cardItems: [],
+    cardItems: itemCardMoke,
   },
   mutations: {
     setCardItem(state, itemCard: ItemCardModel) {

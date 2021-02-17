@@ -2,7 +2,7 @@ import { ItemCard } from "../entities/item_card_model";
 import { AddItemCardRepository } from "../repositories/add_item_card_repository";
 
 export interface IAddItemCard {
-  addItemCard(itemCard: ItemCard): Promise<any>;
+  addItemCard(itemCard: ItemCard): Promise<ItemCard[]>;
 }
 
 export class AddItemCard implements IAddItemCard {
