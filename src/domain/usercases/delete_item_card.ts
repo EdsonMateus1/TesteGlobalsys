@@ -12,6 +12,6 @@ export class DeleteItemCard implements IDeleteItemCard {
     this._repository = repository;
   }
   async delete(itemTitle: string): Promise<ItemCard[] | null> {
-    return await this._repository.delete(itemTitle);
+    return await this._repository.deleteItemCard(itemTitle);
   }
 }

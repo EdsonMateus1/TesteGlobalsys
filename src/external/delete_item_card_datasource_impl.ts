@@ -5,12 +5,15 @@ import { itemCardMoke } from "@/main/mokes/item_card_moke";
 
 export class DeleteCardItemDatasource implements IDeleteItemCardDatasource {
   private itemCard: ItemCardModel[] = itemCardMoke;
-  private itemCardFilter: ItemCardModel[] = [];
-  async delete(itemTitle: string): Promise<ItemCardModel[] | null> {
+
+  async deleteItemCard(itemTitle: string): Promise<ItemCardModel[] | null> {
     try {
       // chamada api
-
-      return this.itemCardFilter;
+      const indexItem = this.itemCard.findIndex(
+        (item) => item.title == itemTitle
+      );
+      this.itemCard.splice(indexItem, 1);
+      return this.itemCard;
     } catch (error) {
       throw new Error("error: DeleteCardItemDatasource");
     }

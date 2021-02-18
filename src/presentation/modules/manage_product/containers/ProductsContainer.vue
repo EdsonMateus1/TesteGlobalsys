@@ -1,7 +1,7 @@
 <template>
   <div class="container-products">
     <Product v-for="product in pruducts" v-bind="product" :key="product.name" />
-    {{ CardControllerModuleGet}}
+    {{ CardControllerModuleGet }}
   </div>
 </template>
 
@@ -16,12 +16,13 @@ import { factoryGetProduct } from "../../../../main/factorys/index";
 export default class ProductsContainer extends Vue {
   private getProduct: IGetProduct = factoryGetProduct();
   private pruducts: ProductModel[] = [];
-  private CardControllerModule = this.$store.state.CardControllerModule;
   get CardControllerModuleGet(){
-    return this.CardControllerModule.cardItems
+    return this.$store.state.CardControllerModule
   }
+
   async mounted() {
-    this.pruducts = await this.getProduct.get() as ProductModel[];
+    const res = await this.getProduct.get();
+    this.pruducts = res as ProductModel[];
   }
 }
 </script>

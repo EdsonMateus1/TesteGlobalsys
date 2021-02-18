@@ -9,9 +9,9 @@ export class DeleteCardItemRepositoryImpl implements IDeleteItemCardRepository {
   constructor(datasource: IDeleteItemCardDatasource) {
     this._datasource = datasource;
   }
-  async delete(
+  async deleteItemCard(
     itemTitle: string
   ): Promise<ItemCardModel[] | null> {
-    return await this._datasource.delete(itemTitle);
+    return await this._datasource.deleteItemCard(itemTitle);
   }
 }

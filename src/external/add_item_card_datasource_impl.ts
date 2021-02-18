@@ -6,15 +6,13 @@ import { itemCardMoke } from "../main/mokes/item_card_moke";
 export class AddCardItemDatasource implements IAddItemCardDatasource {
   private itemCard: ItemCardModel[] = itemCardMoke;
   private existsItemCard: any;
-  async addItemCard(
-    itemCard: ItemCardModel
-  ): Promise<ItemCardModel[] | null> {
+  async addItemCard(itemCard: ItemCardModel): Promise<ItemCardModel[] | null> {
     this.existsItemCard = this.itemCard.find((e) => {
       return e.title == itemCard.title;
     });
     try {
       if (!this.existsItemCard) {
-        await this.itemCard.push(itemCard); // chamada api
+        this.itemCard.push(itemCard); // chamada api
         return this.itemCard;
       } else {
         return null;
