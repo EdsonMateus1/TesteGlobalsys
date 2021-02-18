@@ -21,6 +21,9 @@ button {
 button:hover {
   cursor: pointer;
 }
+button:focus {
+  outline: none;
+}
 
 .font-pruduct-title {
   font-style: normal;
@@ -49,5 +52,4 @@ button:hover {
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
 }
-
 </style>

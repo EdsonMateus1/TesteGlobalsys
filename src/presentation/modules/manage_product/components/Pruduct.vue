@@ -55,20 +55,6 @@ export default class Product extends Vue {
     );
     await this.$store.dispatch("addItemCard", itemCard);
   }
-
-  async deleteItemCard(itemTitle: string): Promise<void> {
-    await this.$store.dispatch("deleteItemCard", itemTitle);
-  }
-  
-  async editQuantityItemCard(
-    itemTitle: string,
-    newQuantity: number
-  ): Promise<void> {
-    await this.$store.dispatch("editQuantityItemCard", {
-      itemTitle: itemTitle,
-      newQuantity: newQuantity,
-    });
-  }
 }
 </script>
 
@@ -125,6 +111,10 @@ export default class Product extends Vue {
   background: #b6116e;
   height: 40px;
   width: 156px;
+}
+
+.button_product:focus{
+  background-color: rgba(182, 17, 110, .8);
 }
 
 .button-disable {
