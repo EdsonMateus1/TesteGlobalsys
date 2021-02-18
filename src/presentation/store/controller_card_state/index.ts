@@ -18,7 +18,7 @@ export const CardControllerModule: StoreOptions<State> = {
     cardItems: [],
   },
   mutations: {
-    setCardItem(state, itemCard: ItemCardModel) {
+    setCardItem(state, itemCard: ItemCardModel[]) {
       state.cardItems = itemCard;
     },
   },

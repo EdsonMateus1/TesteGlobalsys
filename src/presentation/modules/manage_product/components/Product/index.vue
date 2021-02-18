@@ -34,7 +34,6 @@ export default class Product extends Vue {
     await this.$store.dispatch("addItemCard", itemCard);
   }
   async deleteItemCard(itemTitle: string): Promise<void> {
-    console.log(itemTitle);
     await this.$store.dispatch("deleteItemCard", itemTitle);
   }
 }
