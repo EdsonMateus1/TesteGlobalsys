@@ -2,7 +2,7 @@ import { IProduct } from "../entities/product_model";
 import { IGetProductRepository } from "../repositories/get_product_repository";
 
 export interface IGetProduct {
-  getProduct(): Promise<IProduct[]>;
+  get(): Promise<IProduct[]>;
 }
 
 export class GetProduct implements IGetProduct {
@@ -10,7 +10,7 @@ export class GetProduct implements IGetProduct {
   constructor(repository: IGetProductRepository) {
     this._repository = repository;
   }
-  async getProduct(): Promise<IProduct[]> {
+  async get(): Promise<IProduct[]> {
     return await this._repository.getProduct();
   }
 }

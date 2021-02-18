@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from "vue-property-decorator";
-import { IGetProduct } from "@/domain/usecases/get_product";
+import { IGetProduct } from "@/domain/usercases/get_product";
 import { ProductModel } from "@/data/model/product_model_impl";
 import Product from "../components/Product/index.vue";
 import { factoryGetProduct } from "../../../../main/factorys/index";
@@ -15,14 +15,13 @@ import { factoryGetProduct } from "../../../../main/factorys/index";
 @Component({ components: { Product } })
 export default class ProductsContainer extends Vue {
   private getProduct: IGetProduct = factoryGetProduct();
-  private pruducts: Array<ProductModel> = [];
+  private pruducts: ProductModel[] = [];
   private CardControllerModule = this.$store.state.CardControllerModule;
-
   get CardControllerModuleGet(){
     return this.CardControllerModule.cardItems
   }
   async mounted() {
-    this.pruducts = await this.getProduct.getProduct();
+    this.pruducts = await this.getProduct.get() as ProductModel[];
   }
 }
 </script>
