@@ -1,7 +1,7 @@
 <template>
   <div class="container-products">
     <Product v-for="product in pruducts" v-bind="product" :key="product.name" />
-    {{ CardControllerModule.cardItems }}
+    {{ pruducts}}
   </div>
 </template>
 

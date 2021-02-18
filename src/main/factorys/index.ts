@@ -1,5 +1,6 @@
 import { AddCardItemRepositoryImpl } from "@/data/repositories/add_item_card_repository_impl";
 import { GetRepositoryImpl } from "@/data/repositories/get_product_repository_impl";
+import { DomainError } from "@/domain/errors/errors";
 import { AddItemCard } from "@/domain/usercases/add_item_card";
 import { GetProduct } from "@/domain/usercases/get_product";
 import { CardItemDatasource } from "@/external/add_item_card_datasource_impl";
@@ -17,4 +18,9 @@ export function factoryAddCardItem() {
     new AddCardItemRepositoryImpl(new CardItemDatasource())
   );
   return addCardItem;
+}
+
+export function factoryDomainError(msg: string, name: string) {
+  const domainError = new DomainError(msg, name);
+  return domainError;
 }
