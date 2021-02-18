@@ -19,7 +19,6 @@ export default class ProductsContainer extends Vue {
   get CardControllerModuleGet(){
     return this.$store.state.CardControllerModule
   }
-
   async mounted() {
     const res = await this.getProduct.get();
     this.pruducts = res as ProductModel[];

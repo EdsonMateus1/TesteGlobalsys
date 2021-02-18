@@ -2,6 +2,7 @@
   <div class="product">
     <button @click.prevent="addItemCard">add</button>
     <button @click.prevent="() => deleteItemCard(name)">delete</button>
+    <button @click.prevent="() => editQuantityItemCard(name,10)">edit</button>
   </div>
 </template>
 
@@ -23,7 +24,6 @@ export default class Product extends Vue {
   pricePromotional!: number;
   @Prop({ required: true })
   priceStock!: number;
-
   async addItemCard(): Promise<void> {
     const itemCard = new ItemCardModel(
       this.name as string,
@@ -35,6 +35,15 @@ export default class Product extends Vue {
   }
   async deleteItemCard(itemTitle: string): Promise<void> {
     await this.$store.dispatch("deleteItemCard", itemTitle);
+  }
+  async editQuantityItemCard(
+    itemTitle: string,
+    newQuantity: number
+  ): Promise<void> {
+    await this.$store.dispatch("editQuantityItemCard", {
+      itemTitle: itemTitle,
+      newQuantity: newQuantity,
+    });
   }
 }
 </script>

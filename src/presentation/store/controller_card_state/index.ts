@@ -2,10 +2,12 @@ import { ItemCardModel } from "@/data/model/item_card_model_impl";
 
 import { IAddItemCard } from "@/domain/usercases/add_item_card";
 import { IDeleteItemCard } from "@/domain/usercases/delete_item_card";
+import { IEditQuantityCartItem } from "@/domain/usercases/edit_quatity_item_card";
 import { StoreOptions } from "vuex";
 import {
   factoryAddCardItem,
   factoryDeleteCardItem,
+  factoryeditQuantityCardItem,
 } from "../../../main/factorys/index";
 import { itemCardMoke } from "../../../main/mokes/item_card_moke";
 
@@ -40,6 +42,22 @@ export const CardControllerModule: StoreOptions<State> = {
       const deleteItemCard: IDeleteItemCard = factoryDeleteCardItem();
       try {
         const res = await deleteItemCard.delete(itemTitle);
+        if (res != null) {
+          context.commit("setCardItem", res);
+        } else {
+          return;
+        }
+      } catch (error) {
+        throw Error(error);
+      }
+    },
+    async editQuantityItemCard(context, payload: any) {
+      const editQuantityCartItem: IEditQuantityCartItem = factoryeditQuantityCardItem();
+      try {
+        const res = await editQuantityCartItem.editQuantity(
+          payload.itemTitle,
+          payload.newQuantity
+        );
         if (res != null) {
           context.commit("setCardItem", res);
         } else {
