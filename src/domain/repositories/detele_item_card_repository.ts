@@ -1,6 +1,6 @@
 import { ItemCard } from "../entities/item_card_model";
-import { IDomainError } from "../errors/errors";
+
 
 export interface IDeleteItemCardRepository {
-  delete(itemCard: ItemCard): Promise<ItemCard[] | IDomainError>;
+  delete(itemTitle: string): Promise<ItemCard[] | null>;
 }

@@ -1,6 +1,7 @@
 <template>
   <div class="product">
     <button @click.prevent="addItemCard">add</button>
+    <button @click.prevent="() => deleteItemCard(name)">delete</button>
   </div>
 </template>
 
@@ -31,6 +32,10 @@ export default class Product extends Vue {
       1
     );
     await this.$store.dispatch("addItemCard", itemCard);
+  }
+  async deleteItemCard(itemTitle: string): Promise<void> {
+    console.log(itemTitle);
+    await this.$store.dispatch("deleteItemCard", itemTitle);
   }
 }
 </script>

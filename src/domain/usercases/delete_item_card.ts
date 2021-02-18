@@ -1,9 +1,9 @@
 import { ItemCard } from "../entities/item_card_model";
-import { IDomainError } from "../errors/errors";
+
 import { IDeleteItemCardRepository } from "../repositories/detele_item_card_repository";
 
 export interface IDeleteItemCard {
-  delete(itemCard: ItemCard): Promise<ItemCard[] | IDomainError>;
+  delete(itemTitle: string): Promise<ItemCard[] | null>;
 }
 
 export class DeleteItemCard implements IDeleteItemCard {
@@ -11,7 +11,7 @@ export class DeleteItemCard implements IDeleteItemCard {
   constructor(repository: IDeleteItemCardRepository) {
     this._repository = repository;
   }
-  async delete(itemCard: ItemCard): Promise<ItemCard[] | IDomainError> {
-    return await this._repository.delete(itemCard);
+  async delete(itemTitle: string): Promise<ItemCard[] | null> {
+    return await this._repository.delete(itemTitle);
   }
 }

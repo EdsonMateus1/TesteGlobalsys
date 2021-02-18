@@ -1,7 +1,7 @@
 <template>
   <div class="container-products">
     <Product v-for="product in pruducts" v-bind="product" :key="product.name" />
-    {{ pruducts}}
+    {{ CardControllerModuleGet}}
   </div>
 </template>
 
@@ -17,6 +17,10 @@ export default class ProductsContainer extends Vue {
   private getProduct: IGetProduct = factoryGetProduct();
   private pruducts: Array<ProductModel> = [];
   private CardControllerModule = this.$store.state.CardControllerModule;
+
+  get CardControllerModuleGet(){
+    return this.CardControllerModule.cardItems
+  }
   async mounted() {
     this.pruducts = await this.getProduct.getProduct();
   }
