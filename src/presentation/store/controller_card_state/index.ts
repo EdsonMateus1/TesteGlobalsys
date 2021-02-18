@@ -8,7 +8,7 @@ interface State {
   cardItems: ItemCardModel[];
 }
 
-export const CardController: StoreOptions<State> = {
+export const CardControllerModule: StoreOptions<State> = {
   state: {
     cardItems: itemCardMoke,
   },

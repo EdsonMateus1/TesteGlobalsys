@@ -12,10 +12,9 @@ export function factoryGetProduct() {
   return getProduct;
 }
 
-const addCardItem = new AddItemCard(
-  new AddCardItemRepositoryImpl(new CardItemDatasource())
-);
-
 export function factoryAddCardItem() {
+  const addCardItem = new AddItemCard(
+    new AddCardItemRepositoryImpl(new CardItemDatasource())
+  );
   return addCardItem;
 }

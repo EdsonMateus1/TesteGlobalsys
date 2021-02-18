@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <ProductsContainer :getProduct="getProduct" />
+    <ProductsContainer />
   </div>
 </template>
 
@@ -11,11 +11,5 @@ import { factoryGetProduct } from "../../main/factorys";
 @Component({
   components: { ProductsContainer },
 })
-export default class Home extends Vue {
-  private getProduct = factoryGetProduct();
-
-  mounted() {
-  //  console.log(this.$store.state)
-  }
-}
+export default class Home extends Vue {}
 </script>
