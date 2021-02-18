@@ -1,8 +1,6 @@
 <template>
   <div class="product">
     <button @click.prevent="addItemCard">add</button>
-    <button @click.prevent="() => deleteItemCard(name)">delete</button>
-    <button @click.prevent="() => editQuantityItemCard(name,10)">edit</button>
   </div>
 </template>
 

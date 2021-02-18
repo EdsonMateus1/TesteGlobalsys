@@ -7,9 +7,8 @@ import { StoreOptions } from "vuex";
 import {
   factoryAddCardItem,
   factoryDeleteCardItem,
-  factoryeditQuantityCardItem,
+  factoryEditQuantityCardItem,
 } from "../../../main/factorys/index";
-import { itemCardMoke } from "../../../main/mokes/item_card_moke";
 
 interface State {
   cardItems: ItemCardModel[];
@@ -52,7 +51,7 @@ export const CardControllerModule: StoreOptions<State> = {
       }
     },
     async editQuantityItemCard(context, payload: any) {
-      const editQuantityCartItem: IEditQuantityCartItem = factoryeditQuantityCardItem();
+      const editQuantityCartItem: IEditQuantityCartItem = factoryEditQuantityCardItem();
       try {
         const res = await editQuantityCartItem.editQuantity(
           payload.itemTitle,

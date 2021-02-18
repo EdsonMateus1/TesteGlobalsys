@@ -32,7 +32,7 @@ export function factoryDeleteCardItem() {
   return deleteCardItem;
 }
 
-export function factoryeditQuantityCardItem() {
+export function factoryEditQuantityCardItem() {
   const editQuantityCardItem = new EditQuantityCartItem(
     new EditQuantityCartItemRepositoryImpl(new EditCardItemDatasource())
   );
