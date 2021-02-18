@@ -1,0 +1,17 @@
+import { ItemCard } from "@/domain/entities/item_card_model";
+import { IDomainError } from "@/domain/errors/errors";
+import { IDeleteItemCardRepository } from "@/domain/repositories/detele_item_card_repository";
+import { IDeleteItemCardDatasource } from "../datasources/delete_item_card_datasource";
+import { ItemCardModel } from "../model/item_card_model_impl";
+
+export class DeleteCardItemRepositoryImpl implements IDeleteItemCardRepository {
+  private _datasource: IDeleteItemCardDatasource;
+  constructor(datasource: IDeleteItemCardDatasource) {
+    this._datasource = datasource;
+  }
+  async delete(
+    itemCard: ItemCardModel
+  ): Promise<ItemCardModel[] | IDomainError> {
+    return await this._datasource.delete(itemCard);
+  }
+}

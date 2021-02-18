@@ -11,7 +11,6 @@ export class ItemCardModel implements ItemCard {
     this.price = price;
     this.quantity = quantity;
   }
-
   get priceFormat() {
     return this.price.toString().replace(".", ",");
   }

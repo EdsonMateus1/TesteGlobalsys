@@ -1,14 +1,14 @@
 import { ItemCard } from "../entities/item_card_model";
 import { IDomainError } from "../errors/errors";
-import { AddItemCardRepository } from "../repositories/add_item_card_repository";
+import { IAddItemCardRepository } from "../repositories/add_item_card_repository";
 
 export interface IAddItemCard {
   addItemCard(itemCard: ItemCard): Promise<ItemCard[] | IDomainError>;
 }
 
 export class AddItemCard implements IAddItemCard {
-  private _repository: AddItemCardRepository;
-  constructor(repository: AddItemCardRepository) {
+  private _repository: IAddItemCardRepository;
+  constructor(repository: IAddItemCardRepository) {
     this._repository = repository;
   }
   async addItemCard(itemCard: ItemCard): Promise<ItemCard[] | IDomainError> {
