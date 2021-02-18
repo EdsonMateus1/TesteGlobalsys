@@ -1,7 +1,6 @@
 <template>
   <div class="container-products">
     <Product v-for="product in pruducts" v-bind="product" :key="product.name" />
-    {{ CardControllerModuleGet }}
   </div>
 </template>
 
@@ -16,8 +15,8 @@ import { factoryGetProduct } from "../../../../main/factorys/index";
 export default class ProductsContainer extends Vue {
   private getProduct: IGetProduct = factoryGetProduct();
   private pruducts: ProductModel[] = [];
-  get CardControllerModuleGet(){
-    return this.$store.state.CardControllerModule
+  get CardControllerModuleGet() {
+    return this.$store.state.CardControllerModule;
   }
   async mounted() {
     const res = await this.getProduct.get();
@@ -26,4 +25,11 @@ export default class ProductsContainer extends Vue {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.container-products {
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  gap: 20px;
+}
+</style>
