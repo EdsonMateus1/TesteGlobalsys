@@ -1,5 +1,6 @@
 <template>
   <div class="home-container">
+    <Header :onCloseCard="closeCard" />
     <div class="home">
       <img
         class="banner-home"
@@ -13,7 +14,6 @@
       <transition name="card">
         <CardContainer v-if="showCard" :onCloseCard="closeCard" />
       </transition>
-      <button @click="closeCard">card</button>
     </div>
   </div>
 </template>
@@ -22,12 +22,13 @@
 import { Vue, Component } from "vue-property-decorator";
 import ProductsContainer from "../modules/manage_product/containers/ProductsContainer.vue";
 import CardContainer from "../modules/manage_card/containers/CardContainer.vue";
+import Header from "../components/Header.vue";
 
 @Component({
-  components: { ProductsContainer, CardContainer },
+  components: { ProductsContainer, CardContainer, Header },
 })
 export default class Home extends Vue {
-  private showCard = true;
+  private showCard = false;
   closeCard(): void {
     this.showCard = !this.showCard;
   }
@@ -60,7 +61,7 @@ export default class Home extends Vue {
 }
 
 @media (max-width: 1180px) {
-  .home{
+  .home {
     width: 100%;
   }
 }
