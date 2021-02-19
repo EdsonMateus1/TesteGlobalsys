@@ -7,7 +7,7 @@
       <div class="right-card">
         <div class="flex container-title-delete">
           <span class="font-pruduct-title title-card-item">{{ title }}</span>
-          <button @click.prevent="() => deleteItemCard(title)">
+          <button @click.prevent="showModal">
             <img src="../assets/svg/x-circle.svg" alt="icone delete" />
           </button>
         </div>
@@ -21,18 +21,30 @@
               <img src="../assets/svg/plus.svg" alt="icone add item" />
             </button>
           </div>
-          <span class="font-pruduct-price"><strong>R$</strong>{{ priceFormat }}</span>
+          <span class="font-pruduct-price"
+            ><strong>R$</strong>{{ priceFormat }}</span
+          >
         </div>
       </div>
     </div>
     <hr class="divider" />
+    <transition name="fade">
+      <ConfirmeDelete
+        @closeModal="showConfirmDelete = $event"
+        :title="title"
+        v-if="showConfirmDelete"
+      />
+    </transition>
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component, Prop } from "vue-property-decorator";
+import ConfirmeDelete from "./ConfirmeDelete.vue";
 
-@Component({})
+@Component({
+  components: { ConfirmeDelete },
+})
 export default class CardItem extends Vue {
   @Prop({ required: true })
   title!: string;
@@ -43,7 +55,14 @@ export default class CardItem extends Vue {
   @Prop({ required: true })
   quantity!: number;
   private stateQuantity = this.quantity;
+  private showConfirmDelete = false;
 
+  showModal() {
+    this.showConfirmDelete = !this.showConfirmDelete;
+  }
+  updated() {
+    console.log(this.showConfirmDelete);
+  }
   get priceFormat() {
     const priceFormat = this.price * this.quantity;
     return priceFormat
@@ -52,9 +71,6 @@ export default class CardItem extends Vue {
       .replace(".", ",");
   }
 
-  async deleteItemCard(itemTitle: string): Promise<void> {
-    await this.$store.dispatch("deleteItemCard", itemTitle);
-  }
   async editQuantityItemCard(
     itemTitle: string,
     newQuantity: number
@@ -80,6 +96,16 @@ export default class CardItem extends Vue {
 </script>
 
 <style scoped>
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
 .card-item {
   display: flex;
 }

@@ -58,8 +58,8 @@ button:focus {
 .font-button {
   font-style: normal;
   font-weight: bold;
-  font-size: 16px;
-  line-height: 17px;
+  font-size: 17px;
+  line-height: 20px;
   color: #ffffff;
 }
 .button-active {
