@@ -1,6 +1,7 @@
 <template>
   <div class="card-item">
-    {{title}}
+    <div class="left-card"></div>
+    <div class="right-card"></div>
   </div>
 </template>
 

@@ -50,7 +50,7 @@ export default class Product extends Vue {
     const itemCard = new ItemCardModel(
       this.name as string,
       this.image as string,
-      this.priceStock,
+      this.pricePromotional,
       1
     );
     await this.$store.dispatch("addItemCard", itemCard);
