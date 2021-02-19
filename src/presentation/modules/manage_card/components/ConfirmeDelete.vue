@@ -1,7 +1,9 @@
 <template>
   <div class="container-modal">
     <div class="confime-delete">
-      <span class="text">OPS , tem certeza que deseja excluir esse item do seu carrinho?</span>
+      <span class="text"
+        >OPS , tem certeza que deseja excluir esse item do seu carrinho?</span
+      >
       <div class="container-buttons">
         <button
           @click.stop="closeModal"
@@ -93,5 +95,11 @@ export default class ConfirmDelete extends Vue {
   text-align: center;
   color: #c81a78;
   border: 0.8px solid #c81a78;
+}
+
+@media (max-width: 1180px) {
+  .confime-delete {
+    width: 90%;
+  }
 }
 </style>

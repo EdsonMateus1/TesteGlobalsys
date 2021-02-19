@@ -2,12 +2,9 @@
   <div class="home-container">
     <Header :onCloseCard="closeCard" />
     <div class="home">
-      <img
-        class="banner-home"
-        src="../assets/img/Banner.png"
-        alt=""
-        srcset=""
-      />
+      <div class="container-banner">
+        <div class="banner-home" />
+      </div>
       <main class="main">
         <ProductsContainer />
       </main>
@@ -58,11 +55,38 @@ export default class Home extends Vue {
 }
 .banner-home {
   margin: 50px 0px;
+  width: 1180px;
+  height: 331px;
+  background: url("../assets/img/Banner.png");
 }
 
 @media (max-width: 1180px) {
   .home {
     width: 100%;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+  .banner-home {
+    margin: 30px 0px;
+    width: 90%;
+    height: 375px;
+    background: url("../assets/img/Banner-mobile.png");
+    background-size: contain;
+    background-repeat: repeat;
+  }
+  .container-banner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .banner-home {
+    background-repeat: repeat;
+    background-size: contain;
   }
 }
 </style>

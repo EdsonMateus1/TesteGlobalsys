@@ -52,7 +52,7 @@ export default class CardContainer extends Vue {
       .toString()
       .replace(".", ",");
   }
-  
+
   get totalItems() {
     const carItems: ItemCardModel[] = this.cardItems;
     const quantityTotal = carItems.reduce(
@@ -144,5 +144,17 @@ export default class CardContainer extends Vue {
 }
 .button-purchase:focus {
   background-color: rgba(127, 188, 68, 0.8);
+}
+
+@media (max-width: 1180px) {
+  .container-card {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+   .container-card {
+     width: 350px;
+  }
 }
 </style>

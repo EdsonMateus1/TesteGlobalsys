@@ -67,4 +67,10 @@ button:focus {
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
 }
+@media (max-width: 1180px){
+  .font-pruduct-title{
+    height: 50px;
+    text-align: center;
+  }
+}
 </style>

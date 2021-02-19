@@ -129,4 +129,15 @@ export default class Header extends Vue {
   color: #666666;
   text-decoration: none;
 }
+
+
+/**/
+@media (max-width: 1180px) {
+  .container-header{
+    width: 95%;
+  }
+  .container-links{
+    display: none;
+  }
+}
 </style>

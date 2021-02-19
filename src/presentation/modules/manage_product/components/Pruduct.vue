@@ -127,4 +127,22 @@ export default class Product extends Vue {
 .button-disable:hover {
   cursor: default;
 }
+
+@media (max-width: 1180px){
+  .product{
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+  .image-container_pruduct{
+    width: auto;
+  }
+  .container-left_product{
+    width: auto;
+    height: 200px;
+    align-items: center;
+    gap: 0px;
+
+  }
+}
 </style>
