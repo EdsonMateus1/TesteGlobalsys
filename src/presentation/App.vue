@@ -31,7 +31,7 @@ button:focus {
 .font-pruduct-title {
   font-style: normal;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 16px;
   letter-spacing: -0.2px;
   color: #1d1d1b;

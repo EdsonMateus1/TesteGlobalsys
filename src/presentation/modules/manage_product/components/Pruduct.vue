@@ -1,6 +1,6 @@
 <template>
   <div class="product">
-    <div class="image-container_pruduct"><img :src="image" /></div>
+    <div class="image-container_pruduct"><img :src="image" alt="image vinho"/></div>
     <div class="container-left_product">
       <span class="font-pruduct-title">{{ name }}</span>
       <template v-if="available">

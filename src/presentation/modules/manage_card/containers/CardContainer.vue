@@ -70,6 +70,7 @@ export default class CardContainer extends Vue {
   width: 350px;
   height: 100%;
   background: #f5f5f5;
+  overflow-y: auto;
  
 }
 .header-card {
