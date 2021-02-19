@@ -1,6 +1,6 @@
 <template>
   <div class="home-container">
-    <Header :onCloseCard="closeCard" />
+    <Header :onCloseCart="closeCart" />
     <div class="home">
       <div class="container-banner">
         <div class="banner-home" />
@@ -9,7 +9,7 @@
         <ProductsContainer />
       </main>
       <transition name="card">
-        <CardContainer v-if="showCard" :onCloseCard="closeCard" />
+        <CartContainer v-if="showCart" :onCloseCart="closeCart" />
       </transition>
     </div>
   </div>
@@ -18,16 +18,17 @@
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
 import ProductsContainer from "../modules/manage_product/containers/ProductsContainer.vue";
-import CardContainer from "../modules/manage_card/containers/CardContainer.vue";
+import CartContainer from "../modules/manage_card/containers/CardContainer.vue";
+import MenuContainer from "../modules/manage_menu/containers/MenuContainer.vue";
 import Header from "../components/Header.vue";
 
 @Component({
-  components: { ProductsContainer, CardContainer, Header },
+  components: { ProductsContainer, CartContainer, Header , },
 })
 export default class Home extends Vue {
-  private showCard = false;
-  closeCard(): void {
-    this.showCard = !this.showCard;
+  private showCart = false;
+  closeCart(): void {
+    this.showCart = !this.showCart;
   }
 }
 </script>

@@ -67,10 +67,30 @@ button:focus {
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
 }
-@media (max-width: 1180px){
-  .font-pruduct-title{
+.container-modal {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 350px;
+  height: 100%;
+  background: #f5f5f5;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+@media (max-width: 1180px) {
+  .font-pruduct-title {
     height: 50px;
     text-align: center;
+  }
+  .container-modal {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container-modal {
+    width: 350px;
   }
 }
 </style>

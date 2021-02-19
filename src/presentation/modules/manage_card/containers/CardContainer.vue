@@ -1,7 +1,7 @@
 <template>
-  <div class="container-card">
+  <div class="container-modal">
     <div class="header-card">
-      <button @click.prevent="onCloseCard" class="button-close-card">
+      <button @click.prevent="onCloseCart" class="button-close-card">
         <img src="../assets/svg/arrow-left.svg" alt="" srcset="" />
       </button>
       <h2 class="title-card">WineBox ({{ totalItems }})</h2>
@@ -35,7 +35,7 @@ import CardItem from "../components/CardItem.vue";
 })
 export default class CardContainer extends Vue {
   @Prop({ required: true })
-  onCloseCard!: Function;
+  onCloseCart!: Function;
 
   get cardItems() {
     return this.$store.state.CardControllerModule.cardItems;
@@ -65,16 +65,6 @@ export default class CardContainer extends Vue {
 </script>
 
 <style scope>
-.container-card {
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  width: 350px;
-  height: 100%;
-  background: #f5f5f5;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 999;
-}
 .header-card {
   background: #ffffff;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
@@ -146,15 +136,4 @@ export default class CardContainer extends Vue {
   background-color: rgba(127, 188, 68, 0.8);
 }
 
-@media (max-width: 1180px) {
-  .container-card {
-    width: 100%;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-   .container-card {
-     width: 350px;
-  }
-}
 </style>

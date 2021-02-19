@@ -2,6 +2,13 @@
   <header class="header">
     <div class="container-header">
       <div class="container-title-links">
+        <button @click.prevent="onMenu" class="menu-mobile">
+          <svg viewBox="0 0 110 70" width="40" height="40">
+            <rect width="100" height="10"></rect>
+            <rect y="30" width="100" height="10"></rect>
+            <rect y="60" width="100" height="10"></rect>
+          </svg>
+        </button>
         <h1 class="title-header">
           w<span>in</span>e
         </h1>
@@ -13,7 +20,7 @@
           <a href="#" class="link">Eventos</a>
         </nav>
       </div>
-      <button @click.prevent="onCloseCard" class="container-icone-acess-card">
+      <button @click.prevent="onCloseCart" class="container-icone-acess-card">
         <img src="../assets/img/Bitmap.png" alt="" srcset="" />
         <div class="container-total-items">
           <span class="item-quatity">{{ totalItems }}</span>
@@ -29,7 +36,8 @@ import { Vue, Component, Prop } from "vue-property-decorator";
 @Component({})
 export default class Header extends Vue {
   @Prop({ required: true })
-  onCloseCard!: Function;
+  onCloseCart!: Function;
+  onMenuCard!: Function;
 
   get cardItems() {
     return this.$store.state.CardControllerModule.cardItems;
@@ -54,6 +62,9 @@ export default class Header extends Vue {
   align-items: center;
   background: #ffffff;
 }
+.menu-mobile {
+  display: none;
+}
 .container-header {
   display: flex;
   width: 1120px;
@@ -61,7 +72,7 @@ export default class Header extends Vue {
 }
 
 .title-header {
-  color: #1D1D1B;
+  color: #1d1d1b;
   text-transform: uppercase;
   font-weight: 900;
   font-family: "Sacramento", cursive;
@@ -130,14 +141,21 @@ export default class Header extends Vue {
   text-decoration: none;
 }
 
-
 /**/
 @media (max-width: 1180px) {
-  .container-header{
+  .container-header {
     width: 95%;
   }
-  .container-links{
+  .container-links {
     display: none;
+  }
+  .container-title-links {
+    gap: 20px;
+  }
+  .menu-mobile {
+    display: block;
+    width: 35px;
+    height: 35px;
   }
 }
 </style>
