@@ -7,7 +7,8 @@
         </h1>
         <nav class="container-links">
           <a href="#" class="link">Clube</a>
-          <a href="#" class="link"> Loja</a>
+          <a href="#" class="link">Loja</a>
+          <a href="#" class="link">Produtores</a>
           <a href="#" class="link">Ofertas</a>
           <a href="#" class="link">Eventos</a>
         </nav>

@@ -6,7 +6,7 @@
       </div>
       <div class="right-card">
         <div class="flex container-title-delete">
-          <span class="font-pruduct-title title-card-item">{{ title }}</span>
+          <span class="font-pruduct-title">{{ title }}</span>
           <button @click.prevent="showModal">
             <img src="../assets/svg/x-circle.svg" alt="icone delete" />
           </button>
@@ -129,9 +129,7 @@ export default class CardItem extends Vue {
 .container-title-delete {
   width: 100%;
 }
-.title-card-item {
-  width: 180px;
-}
+
 .img-card {
   width: 100%;
   height: 100%;

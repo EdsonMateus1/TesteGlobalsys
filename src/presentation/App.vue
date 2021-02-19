@@ -42,6 +42,7 @@ button:focus {
   line-height: 16px;
   letter-spacing: 0.8px;
   color: #1d1d1b;
+  width: 150px;
 }
 .font-pruduct-price {
   font-style: normal;
@@ -50,7 +51,7 @@ button:focus {
   line-height: 18px;
   color: #c81a78;
 }
-.font-pruduct-price strong{
+.font-pruduct-price strong {
   font-size: 15px;
   margin-right: 2px;
 }

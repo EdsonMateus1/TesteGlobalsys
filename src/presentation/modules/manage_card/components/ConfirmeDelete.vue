@@ -52,12 +52,12 @@ export default class ConfirmDelete extends Vue {
 }
 
 .confime-delete {
-  width: 300px;
+  width: 500px;
   height: 200px;
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 20px 25px #0000001a;
   border-radius: 5px;
-  padding: 10px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -71,9 +71,9 @@ export default class ConfirmDelete extends Vue {
 }
 .container-buttons {
   display: flex;
-  justify-content: end;
-  gap: 20px;
+  gap: 50px;
   align-items: center;
+  justify-content: center;
 }
 
 .size-button {
@@ -88,9 +88,10 @@ export default class ConfirmDelete extends Vue {
   color: #ffffff;
 }
 .button-confirme {
-  background: rgba(182, 17, 110, 0.6);
+  background: #fff;
   border-radius: 5px;
   text-align: center;
-  color: #ffffff;
+  color: #c81a78;
+  border: 0.8px solid #c81a78;
 }
 </style>
