@@ -10,7 +10,7 @@
           >
           <span class="font-ispartner">sócio wine</span>
           <span class="font-pruduct-price"
-            >R${{ priceMember.toFixed(2).toString().replace(".", ",") }}</span
+            ><strong>R$</strong>{{ priceMember.toFixed(2).toString().replace(".", ",") }}</span
           >
         </div>
         <button

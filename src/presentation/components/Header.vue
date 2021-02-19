@@ -103,7 +103,7 @@ export default class Header extends Vue {
   font-family: Open Sans;
   font-style: normal;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 15px;
   color: #5cb79f;
 }
@@ -124,6 +124,7 @@ export default class Header extends Vue {
   font-weight: normal;
   font-size: 20px;
   line-height: 24px;
+  letter-spacing: 1px;
   color: #666666;
   text-decoration: none;
 }

@@ -21,7 +21,7 @@
               <img src="../assets/svg/plus.svg" alt="icone add item" />
             </button>
           </div>
-          <span class="font-pruduct-price">R${{ priceFormat }}</span>
+          <span class="font-pruduct-price"><strong>R$</strong>{{ priceFormat }}</span>
         </div>
       </div>
     </div>

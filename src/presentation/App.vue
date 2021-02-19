@@ -10,6 +10,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
+  letter-spacing: 1.5px;
 }
 html {
   overflow-x: hidden;
@@ -37,17 +38,21 @@ button:focus {
 .font-pruduct-title {
   font-style: normal;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 17px;
   line-height: 16px;
-  letter-spacing: -0.2px;
+  letter-spacing: 0.8px;
   color: #1d1d1b;
 }
 .font-pruduct-price {
   font-style: normal;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 18px;
   color: #c81a78;
+}
+.font-pruduct-price strong{
+  font-size: 15px;
+  margin-right: 2px;
 }
 
 .font-button {
