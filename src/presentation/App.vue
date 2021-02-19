@@ -11,6 +11,9 @@
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
 }
+html{
+  overflow-x: hidden;
+}
 
 button {
   border: none;

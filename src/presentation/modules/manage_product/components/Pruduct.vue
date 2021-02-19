@@ -6,11 +6,11 @@
       <template v-if="available">
         <div class="price-container">
           <span class="font-price-promotional"
-            >${{ pricePromotional.toString().replace(".", ",") }}</span
+            >R${{ pricePromotional.toFixed(2).toString().replace(".", ",") }}</span
           >
           <span class="font-ispartner">sócio wine</span>
           <span class="font-pruduct-price"
-            >${{ priceMember.toString().replace(".", ",") }}</span
+            >R${{ priceMember.toFixed(2).toString().replace(".", ",") }}</span
           >
         </div>
         <button

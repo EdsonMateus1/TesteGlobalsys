@@ -28,8 +28,6 @@ export const CardControllerModule: StoreOptions<State> = {
       const addCardItem: IAddItemCard = factoryAddCardItem();
       try {
         const res = await addCardItem.add(itemCard);
-        console.log(res);
-        
         if (res != null) {
           context.commit("setCardItem", res);
         } else {
