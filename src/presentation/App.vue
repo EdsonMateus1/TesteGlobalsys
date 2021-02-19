@@ -39,7 +39,7 @@ button:focus {
 .font-pruduct-price {
   font-style: normal;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 18px;
   color: #c81a78;
 }

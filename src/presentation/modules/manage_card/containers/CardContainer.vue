@@ -70,8 +70,7 @@ export default class CardContainer extends Vue {
   width: 350px;
   height: 100%;
   background: #f5f5f5;
-  overflow-y: auto;
- 
+  
 }
 .header-card {
   background: #ffffff;
@@ -97,7 +96,12 @@ export default class CardContainer extends Vue {
   letter-spacing: -0.833333px;
 }
 .card-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 15px 15px;
   height: calc(100% - 180px);
+  overflow-y: auto;
 }
 .footer-card {
   width: 100%;

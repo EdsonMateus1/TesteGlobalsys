@@ -1,18 +1,31 @@
 <template>
-  <div class="card-item">
-    <div class="left-card">
-      <img class="img-card" :src="image" alt="imagem vinho" />
-    </div>
-    <div class="right-card">
-      <div class="flex container-title-delete">
-        <span class="font-pruduct-title title-card-item">{{ title }}</span>
-        <button @click.prevent="() => deleteItemCard(title)"> <img  src="../assets/svg/x-circle.svg" alt="icone delete"/> </button>
+  <div>
+    <div class="card-item">
+      <div class="left-card">
+        <img class="img-card" :src="image" alt="imagem vinho" />
       </div>
-      <div>
-        <div class="select-quatity"></div>
-        <span class="font-pruduct-price">R${{ price }}</span>
+      <div class="right-card">
+        <div class="flex container-title-delete">
+          <span class="font-pruduct-title title-card-item">{{ title }}</span>
+          <button @click.prevent="() => deleteItemCard(title)">
+            <img src="../assets/svg/cart-x-fill.svg" alt="icone delete" />
+          </button>
+        </div>
+        <div class="flex container-select-quatity">
+          <div class="select-quatity">
+            <button @click.prevent="subQuantity" class="icone-add-quatity">
+              <img src="../assets/svg/dash.svg" alt="icone sub item" />
+            </button>
+            <span>{{ stateQuantity }}</span>
+            <button @click.prevent="addQuantity" class="icone-add-quatity">
+              <img src="../assets/svg/plus.svg" alt="icone add item" />
+            </button>
+          </div>
+          <span class="font-pruduct-price">R${{ price }}</span>
+        </div>
       </div>
     </div>
+    <hr class="divider" />
   </div>
 </template>
 
@@ -29,6 +42,7 @@ export default class CardItem extends Vue {
   price!: number;
   @Prop({ required: true })
   quantity!: number;
+  private stateQuantity = this.quantity;
 
   async deleteItemCard(itemTitle: string): Promise<void> {
     await this.$store.dispatch("deleteItemCard", itemTitle);
@@ -42,13 +56,29 @@ export default class CardItem extends Vue {
       newQuantity: newQuantity,
     });
   }
+  addQuantity() {
+    this.stateQuantity++;
+    this.editQuantityItemCard(this.title, this.stateQuantity);
+  }
+  subQuantity() {
+    if (this.stateQuantity == 1) {
+      return;
+    } else {
+      this.stateQuantity--;
+      this.editQuantityItemCard(this.title, this.stateQuantity);
+    }
+  }
 }
 </script>
 
 <style scoped>
 .card-item {
   display: flex;
-  padding: 15px 25px 15px 5px;
+}
+.divider {
+  border: 0.5px solid #d5d5d5;
+  height: 1px;
+  margin: 30px 0px;
 }
 
 .left-card {
@@ -62,10 +92,8 @@ export default class CardItem extends Vue {
   width: calc(100% - 96px);
 }
 
-.container-title-delete{
+.container-title-delete {
   width: 100%;
-  justify-content: space-between;
-  align-items: center;
 }
 .title-card-item {
   width: 180px;
@@ -77,5 +105,20 @@ export default class CardItem extends Vue {
 }
 .flex {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.select-quatity {
+  height: 38px;
+  width: 76px;
+  padding: 15px;
+  border: 0.5px solid #888888;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+.icone-add-quatity {
+  font-size: 20px;
 }
 </style>
