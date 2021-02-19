@@ -2,7 +2,7 @@
   <header class="header">
     <div class="container-header">
       <div class="container-title-links">
-        <button @click.prevent="onMenu" class="menu-mobile">
+        <button @click.stop="onMenu" class="menu-mobile">
           <svg viewBox="0 0 110 70" width="40" height="40">
             <rect width="100" height="10"></rect>
             <rect y="30" width="100" height="10"></rect>
@@ -20,7 +20,7 @@
           <a href="#" class="link">Eventos</a>
         </nav>
       </div>
-      <button @click.prevent="onCloseCart" class="container-icone-acess-card">
+      <button @click.stop="onCloseCart" class="container-icone-acess-card">
         <img src="../assets/img/Bitmap.png" alt="" srcset="" />
         <div class="container-total-items">
           <span class="item-quatity">{{ totalItems }}</span>
@@ -37,7 +37,8 @@ import { Vue, Component, Prop } from "vue-property-decorator";
 export default class Header extends Vue {
   @Prop({ required: true })
   onCloseCart!: Function;
-  onMenuCard!: Function;
+  @Prop({ required: true })
+  onMenu!: Function;
 
   get cardItems() {
     return this.$store.state.CardControllerModule.cardItems;

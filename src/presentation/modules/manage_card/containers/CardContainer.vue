@@ -1,7 +1,7 @@
 <template>
   <div class="container-modal">
     <div class="header-card">
-      <button @click.prevent="onCloseCart" class="button-close-card">
+      <button @click.stop="onCloseCart" class="button-close-card">
         <img src="../assets/svg/arrow-left.svg" alt="" srcset="" />
       </button>
       <h2 class="title-card">WineBox ({{ totalItems }})</h2>

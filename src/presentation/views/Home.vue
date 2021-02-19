@@ -1,6 +1,6 @@
 <template>
   <div class="home-container">
-    <Header :onCloseCart="closeCart" />
+    <Header :onCloseCart="closeCart" :onMenu="closeMenu" />
     <div class="home">
       <div class="container-banner">
         <div class="banner-home" />
@@ -10,6 +10,15 @@
       </main>
       <transition name="card">
         <CartContainer v-if="showCart" :onCloseCart="closeCart" />
+      </transition>
+      <transition name="menu">
+        <div
+          @click.stop="closeMenu"
+          v-if="showMenu"
+          class="menu-container-home"
+        >
+          <MenuContainer :oncloseMenu="closeMenu" />
+        </div>
       </transition>
     </div>
   </div>
@@ -23,12 +32,16 @@ import MenuContainer from "../modules/manage_menu/containers/MenuContainer.vue";
 import Header from "../components/Header.vue";
 
 @Component({
-  components: { ProductsContainer, CartContainer, Header , },
+  components: { ProductsContainer, CartContainer, Header, MenuContainer },
 })
 export default class Home extends Vue {
   private showCart = false;
+  private showMenu = true;
   closeCart(): void {
     this.showCart = !this.showCart;
+  }
+  closeMenu() {
+    this.showMenu = !this.showMenu;
   }
 }
 </script>
@@ -43,6 +56,17 @@ export default class Home extends Vue {
   opacity: 0;
   transform: translateX(100%);
 }
+
+.menu-enter-active,
+.menu-leave-active {
+  transition: all 0.5s;
+}
+.menu-enter,
+.menu-leave-to {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
 .home-container {
   display: flex;
   align-items: center;
@@ -59,6 +83,16 @@ export default class Home extends Vue {
   width: 1180px;
   height: 331px;
   background: url("../assets/img/Banner.png");
+}
+.menu-container-home {
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
 }
 
 @media (max-width: 1180px) {
