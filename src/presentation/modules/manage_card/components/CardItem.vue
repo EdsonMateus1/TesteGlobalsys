@@ -8,7 +8,7 @@
         <div class="flex container-title-delete">
           <span class="font-pruduct-title title-card-item">{{ title }}</span>
           <button @click.prevent="() => deleteItemCard(title)">
-            <img src="../assets/svg/cart-x-fill.svg" alt="icone delete" />
+            <img src="../assets/svg/x-circle.svg" alt="icone delete" />
           </button>
         </div>
         <div class="flex container-select-quatity">

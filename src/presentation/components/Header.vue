@@ -2,7 +2,9 @@
   <header class="header">
     <div class="container-header">
       <div class="container-title-links">
-        <h1>Wine</h1>
+        <h1 class="title-header">
+          w<span>in</span>e
+        </h1>
         <nav class="container-links">
           <a href="#" class="link">Clube</a>
           <a href="#" class="link"> Loja</a>
@@ -56,6 +58,22 @@ export default class Header extends Vue {
   width: 1120px;
   justify-content: space-between;
 }
+
+.title-header {
+  color: #1D1D1B;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: "Sacramento", cursive;
+  letter-spacing: 2px;
+}
+
+.title-header span {
+  font-family: "Lato", sans-serif;
+  font-weight: 350;
+  font-style: italic;
+  opacity: 0.8;
+}
+
 .container-icone-acess-card {
   position: relative;
   background: #f6b554;

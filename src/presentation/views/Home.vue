@@ -38,7 +38,7 @@ export default class Home extends Vue {
 <style scoped>
 .card-enter-active,
 .card-leave-active {
-  transition: all 0.8s;
+  transition: all 0.7s;
 }
 .card-enter,
 .card-leave-to {
