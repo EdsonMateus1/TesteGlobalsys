@@ -21,7 +21,7 @@
               <img src="../assets/svg/plus.svg" alt="icone add item" />
             </button>
           </div>
-          <span class="font-pruduct-price">R${{ price }}</span>
+          <span class="font-pruduct-price">R${{ priceFormat }}</span>
         </div>
       </div>
     </div>
@@ -43,6 +43,14 @@ export default class CardItem extends Vue {
   @Prop({ required: true })
   quantity!: number;
   private stateQuantity = this.quantity;
+
+  get priceFormat() {
+    const priceFormat = this.price * this.quantity;
+    return priceFormat
+      .toFixed(2)
+      .toString()
+      .replace(".", ",");
+  }
 
   async deleteItemCard(itemTitle: string): Promise<void> {
     await this.$store.dispatch("deleteItemCard", itemTitle);
@@ -111,13 +119,14 @@ export default class CardItem extends Vue {
 .select-quatity {
   height: 38px;
   width: 76px;
-  padding: 15px;
+  padding: 0px 8px;
   border: 0.5px solid #888888;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 5px;
 }
+
 .icone-add-quatity {
   font-size: 20px;
 }

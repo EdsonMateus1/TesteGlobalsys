@@ -43,7 +43,8 @@ export default class CardContainer extends Vue {
   get priceTotal() {
     const carItems: ItemCardModel[] = this.cardItems;
     const priceTotal = carItems.reduce(
-      (acc: number, carItem: ItemCardModel) => acc + carItem.price,
+      (acc: number, carItem: ItemCardModel) =>
+        acc + carItem.price * carItem.quantity,
       0
     );
     return priceTotal
@@ -51,13 +52,14 @@ export default class CardContainer extends Vue {
       .toString()
       .replace(".", ",");
   }
+  
   get totalItems() {
     const carItems: ItemCardModel[] = this.cardItems;
     const quantityTotal = carItems.reduce(
       (acc: number, carItem: ItemCardModel) => acc + carItem.quantity,
       0
     );
-    return quantityTotal.toString();
+    return quantityTotal;
   }
 }
 </script>
@@ -70,7 +72,8 @@ export default class CardContainer extends Vue {
   width: 350px;
   height: 100%;
   background: #f5f5f5;
-  
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
 }
 .header-card {
   background: #ffffff;

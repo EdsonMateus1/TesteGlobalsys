@@ -11,8 +11,14 @@
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
 }
-html{
+html {
   overflow-x: hidden;
+}
+
+body,
+html,
+#app {
+  height: 100%;
 }
 
 button {
@@ -47,7 +53,7 @@ button:focus {
 .font-button {
   font-style: normal;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 17px;
   color: #ffffff;
 }

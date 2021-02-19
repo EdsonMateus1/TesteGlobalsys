@@ -1,10 +1,20 @@
 <template>
-  <div class="home">
-    <ProductsContainer />
-    <transition name="card">
-      <CardContainer v-if="showCard" :onCloseCard="closeCard" />
-    </transition>
-    <button @click="closeCard">card</button>
+  <div class="home-container">
+    <div class="home">
+      <img
+        class="banner-home"
+        src="../assets/img/Banner.png"
+        alt=""
+        srcset=""
+      />
+      <main class="main">
+        <ProductsContainer />
+      </main>
+      <transition name="card">
+        <CardContainer v-if="showCard" :onCloseCard="closeCard" />
+      </transition>
+      <button @click="closeCard">card</button>
+    </div>
   </div>
 </template>
 
@@ -25,12 +35,33 @@ export default class Home extends Vue {
 </script>
 
 <style scoped>
-.card-enter-active, .card-leave-active {
+.card-enter-active,
+.card-leave-active {
   transition: all 0.8s;
 }
-.card-enter, .card-leave-to{
+.card-enter,
+.card-leave-to {
   opacity: 0;
   transform: translateX(100%);
 }
+.home-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5;
+}
+.home {
+  width: 1180px;
+}
+.banner-home {
+  margin: 50px 0px;
+}
 
+@media (max-width: 1180px) {
+  .home{
+    width: 100%;
+  }
+}
 </style>
