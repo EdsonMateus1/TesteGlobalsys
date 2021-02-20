@@ -1,5 +1,5 @@
 <template>
-  <div class="container-modal">
+  <div class="container-modal-delete">
     <div class="confime-delete">
       <span class="text"
         >OPS , tem certeza que deseja excluir esse item do seu carrinho?</span
@@ -40,10 +40,10 @@ export default class ConfirmDelete extends Vue {
 </script>
 
 <style scoped>
-.container-modal {
+.container-modal-delete {
   height: 100%;
   width: 100vw;
-  position: absolute;
+  position: fixed;
   top: 0vh;
   right: 0vw;
   z-index: 999;

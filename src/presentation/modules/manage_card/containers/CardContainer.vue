@@ -1,5 +1,5 @@
 <template>
-  <div class="container-modal">
+  <div class="container-modal card-modal">
     <div class="header-card">
       <button @click.stop="onCloseCart" class="button-close-card">
         <img src="../assets/svg/arrow-left.svg" alt="" srcset="" />
@@ -134,6 +134,12 @@ export default class CardContainer extends Vue {
 }
 .button-purchase:focus {
   background-color: rgba(127, 188, 68, 0.8);
+}
+
+@media (min-width: 500px){
+  .card-modal {
+    width: 350px;
+  }
 }
 
 </style>

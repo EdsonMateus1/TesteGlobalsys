@@ -20,6 +20,7 @@ html,
 #app {
   height: 100%;
   overflow-x: hidden;
+  background: #f5f5f5;
 }
 
 button {

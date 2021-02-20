@@ -57,11 +57,11 @@ export default class Header extends Vue {
 <style scoped>
 .header {
   width: 100%;
-  height: 90px;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #ffffff;
+  padding: 10px 0px;
 }
 .menu-mobile {
   display: none;
@@ -154,9 +154,10 @@ export default class Header extends Vue {
     gap: 20px;
   }
   .menu-mobile {
-    display: block;
+    display: flex;
     width: 35px;
     height: 35px;
+    align-items: flex-end;
   }
 }
 </style>

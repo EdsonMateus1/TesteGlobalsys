@@ -33,7 +33,7 @@ import Header from "../components/Header.vue";
 })
 export default class Home extends Vue {
   private showCart = false;
-  private showMenu = true;
+  private showMenu = false;
   closeCart(): void {
     this.showCart = !this.showCart;
   }
@@ -69,8 +69,7 @@ export default class Home extends Vue {
   align-items: center;
   flex-direction: column;
   width: 100%;
-  height: 100%;
-  background: #f5f5f5;
+  min-height: 100%;
 }
 .home {
   width: 1180px;
@@ -122,10 +121,6 @@ export default class Home extends Vue {
 }
 
 @media (min-width: 500px){
-  .banner-home {
-    background-repeat: repeat;
-    background-size: contain;
-  }
   .black-modal{
     width: calc(100% - 350px);
   }
