@@ -4,14 +4,16 @@
       <button @click.stop="oncloseMenu" class="icone-close-container">
         <img class="icone-close" src="../assets/svg/x.svg" alt="icone delete" />
       </button>
+      <AvatarUsuario />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component, Prop } from "vue-property-decorator";
+import AvatarUsuario from "../components/AvatarUsuario.vue";
 
-@Component({ components: {} })
+@Component({ components: { AvatarUsuario } })
 export default class MenuContainer extends Vue {
   @Prop({ required: true })
   private oncloseMenu!: Function;
@@ -22,13 +24,16 @@ export default class MenuContainer extends Vue {
 .container-menu {
   width: 85%;
   left: 0px;
-  padding: 5px;
 }
 .header-menu {
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  height: 150px;
 }
 .icone-close-container {
   display: flex;
   justify-content: end;
+  justify-content: flex-end;
+  padding: 5px;
   width: 100%;
 }
 .icone-close {
@@ -41,5 +46,4 @@ export default class MenuContainer extends Vue {
     width: 350px;
   }
 }
-
 </style>

@@ -3,7 +3,7 @@
     <div class="container-header">
       <div class="container-title-links">
         <button @click.stop="onMenu" class="menu-mobile">
-          <svg viewBox="0 0 110 70" width="40" height="40">
+          <svg viewBox="0 0 110 70" width="30" height="30">
             <rect width="100" height="10"></rect>
             <rect y="30" width="100" height="10"></rect>
             <rect y="60" width="100" height="10"></rect>

@@ -12,12 +12,9 @@
         <CartContainer v-if="showCart" :onCloseCart="closeCart" />
       </transition>
       <transition name="menu">
-        <div
-          @click.stop="closeMenu"
-          v-if="showMenu"
-          class="menu-container-home"
-        >
+        <div v-if="showMenu" class="menu-container-home">
           <MenuContainer :oncloseMenu="closeMenu" />
+          <div @click.stop="closeMenu" class="black-modal"></div>
         </div>
       </transition>
     </div>
@@ -49,7 +46,7 @@ export default class Home extends Vue {
 <style scoped>
 .card-enter-active,
 .card-leave-active {
-  transition: all 0.7s;
+  transition: all 0.5s;
 }
 .card-enter,
 .card-leave-to {
@@ -87,12 +84,18 @@ export default class Home extends Vue {
 .menu-container-home {
   width: 100%;
   position: absolute;
-  left: 0px;
+  right: 0px;
   top: 0px;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 999;
+}
+.black-modal {
+  width: calc(100% - 85%);
+  position: absolute;
+  right: 0px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 @media (max-width: 1180px) {
@@ -122,6 +125,9 @@ export default class Home extends Vue {
   .banner-home {
     background-repeat: repeat;
     background-size: contain;
+  }
+  .black-modal{
+    width: calc(100% - 350px);
   }
 }
 </style>
