@@ -6,16 +6,16 @@
       </button>
       <AvatarUsuario />
     </div>
-    <ItemMenu />
+    <ContainerItemMenu />
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component, Prop } from "vue-property-decorator";
 import AvatarUsuario from "../components/AvatarUsuario.vue";
-import ItemMenu from "../components/ItemMenu.vue";
+import ContainerItemMenu from "../components/ContainerItemMenu.vue";
 
-@Component({ components: { AvatarUsuario, ItemMenu } })
+@Component({ components: { AvatarUsuario, ContainerItemMenu } })
 export default class MenuContainer extends Vue {
   @Prop({ required: true })
   private oncloseMenu!: Function;

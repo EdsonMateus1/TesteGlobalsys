@@ -1,23 +1,31 @@
 <template>
   <div class="avatar-usuario-container">
     <div class="imagem-avatar">
-      <img class="icone-close" src="../assets/svg/person-circle.svg" alt="icone delete" />
+      <img
+        class="icone-close"
+        src="../assets/svg/person-circle.svg"
+        alt="icone delete"
+      />
     </div>
     <div class="container-title-avatar">
       <span class="acess-acount">Acesse sua conta</span>
       <a class="link-enter" href="#"
         >Entrar
-        <img class="icone-close" src="../assets/svg/arrow-right-short.svg" alt="icone delete" />
+        <div class="icone-close">
+          <img src="../assets/svg/arrow-right-short.svg" alt="icone delete" />
+        </div>
       </a>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Vue, Component  } from "vue-property-decorator";
 
 @Component({ components: {} })
-export default class AvatarUsuario extends Vue {}
+export default class AvatarUsuario extends Vue {
+ 
+}
 </script>
 
 <style scoped>
@@ -51,5 +59,9 @@ export default class AvatarUsuario extends Vue {}
 .acess-acount {
   font-size: 16px;
   color: #666666;
+}
+.icone-close {
+  display: flex;
+  align-items: center;
 }
 </style>

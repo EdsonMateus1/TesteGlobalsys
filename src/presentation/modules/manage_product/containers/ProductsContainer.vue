@@ -1,5 +1,5 @@
 <template>
-  <div class="container-products">
+  <div class="container-products carousel">
     <Product v-for="product in pruducts" v-bind="product" :key="product.name" />
   </div>
 </template>
