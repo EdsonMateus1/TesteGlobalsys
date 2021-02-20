@@ -6,14 +6,16 @@
       </button>
       <AvatarUsuario />
     </div>
+    <ItemMenu />
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component, Prop } from "vue-property-decorator";
 import AvatarUsuario from "../components/AvatarUsuario.vue";
+import ItemMenu from "../components/ItemMenu.vue";
 
-@Component({ components: { AvatarUsuario } })
+@Component({ components: { AvatarUsuario, ItemMenu } })
 export default class MenuContainer extends Vue {
   @Prop({ required: true })
   private oncloseMenu!: Function;
@@ -41,7 +43,7 @@ export default class MenuContainer extends Vue {
   height: 40px;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 500px){
   .container-menu {
     width: 350px;
   }

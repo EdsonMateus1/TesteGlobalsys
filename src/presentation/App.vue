@@ -79,6 +79,12 @@ button:focus {
   overflow: hidden;
 }
 
+.divider {
+  border: 0.5px solid #d5d5d5;
+  height: 1px;
+  margin: 30px 0px;
+}
+
 @media (max-width: 1180px) {
   .font-pruduct-title {
     height: 50px;

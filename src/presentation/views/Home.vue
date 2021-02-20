@@ -121,7 +121,7 @@ export default class Home extends Vue {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 500px){
   .banner-home {
     background-repeat: repeat;
     background-size: contain;

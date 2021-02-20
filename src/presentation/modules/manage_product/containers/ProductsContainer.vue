@@ -23,23 +23,25 @@ export default class ProductsContainer extends Vue {
 </script>
 
 <style scoped>
-.tns-item {
-  font-size: 3rem;
-  font-family: Arial;
-  text-align: center;
-  padding: 2em;
-  background: #fafafb;
-}
-.tns-item:nth-child(odd) {
-  background: #c8e1ff;
-}
-
 .container-products {
   display: flex;
   width: 100%;
   overflow-x: auto;
   gap: 20px;
 }
+.container-products::-webkit-scrollbar-track {
+  background-color: #f4f4f4;
+}
+.container-products::-webkit-scrollbar {
+  width: 1px;
+  height: 5px;
+  background: #f4f4f4;
+}
+
+.container-products::-webkit-scrollbar-thumb {
+  background: #dad7d7;
+}
+
 @media (max-width: 1180px) {
   .container-products {
     margin-bottom: 50px;

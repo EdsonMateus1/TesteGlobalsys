@@ -109,11 +109,6 @@ export default class CardItem extends Vue {
 .card-item {
   display: flex;
 }
-.divider {
-  border: 0.5px solid #d5d5d5;
-  height: 1px;
-  margin: 30px 0px;
-}
 
 .left-card {
   width: 96px;
