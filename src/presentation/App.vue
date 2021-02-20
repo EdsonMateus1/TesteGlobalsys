@@ -13,13 +13,13 @@
   letter-spacing: 1.5px;
 }
 html {
-  overflow-x: hidden;
 }
 
 body,
 html,
 #app {
   height: 100%;
+  overflow-x: hidden;
 }
 
 button {
@@ -68,14 +68,15 @@ button:focus {
   border-radius: 4px;
 }
 .container-modal {
-  position: absolute;
+  position: fixed;
   right: 0px;
   top: 0px;
   width: 350px;
   height: 100%;
   background: #f5f5f5;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 999;
+  overflow: hidden;
 }
 
 @media (max-width: 1180px) {
