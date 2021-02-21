@@ -15,4 +15,4 @@ npm run serve
 npm run build
 ```
 
-<a hrfe="https://eloquent-banach-340ca1.netlify.app/">Projeto</a>
+<a href="https://eloquent-banach-340ca1.netlify.app/">Projeto</a>
