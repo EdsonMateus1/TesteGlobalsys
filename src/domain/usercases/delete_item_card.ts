@@ -1,5 +1,4 @@
 import { ItemCard } from "../entities/item_card_model";
-
 import { IDeleteItemCardRepository } from "../repositories/detele_item_card_repository";
 
 export interface IDeleteItemCard {

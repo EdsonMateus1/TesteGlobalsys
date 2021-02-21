@@ -1,5 +1,4 @@
 import { ItemCard } from "../entities/item_card_model";
-
 import { IAddItemCardRepository } from "../repositories/add_item_card_repository";
 
 export interface IAddItemCard {
