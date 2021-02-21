@@ -15,6 +15,4 @@ npm run serve
 npm run build
 ```
 
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+<a hrfe="https://eloquent-banach-340ca1.netlify.app/">Projeto</a>
