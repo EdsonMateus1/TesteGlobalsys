@@ -1,5 +1,4 @@
 import { ItemCard } from "@/domain/entities/item_card_model";
-
 import { IAddItemCardRepository } from "@/domain/repositories/add_item_card_repository";
 import { IAddItemCardDatasource } from "../datasources/add_item_card_datasource";
 import { ItemCardModel } from "../model/item_card_model_impl";

@@ -1,6 +1,6 @@
-import { ItemCard } from "@/domain/entities/item_card_model";
 import { IEditQuantityCartItemRepository } from "@/domain/repositories/edit_quatity_item_card_repository";
 import { IEditQuantityCartItemDatasource } from "../datasources/edit_quatity_item_card_datasource";
+import { ItemCardModel } from "../model/item_card_model_impl";
 
 export class EditQuantityCartItemRepositoryImpl
   implements IEditQuantityCartItemRepository {
@@ -11,7 +11,7 @@ export class EditQuantityCartItemRepositoryImpl
   async editQuantityItemCard(
     itemTitle: string,
     newQuantity: number
-  ): Promise<ItemCard[] | null> {
+  ): Promise<ItemCardModel[] | null> {
     return await this._datasource.editQuantityItemCard(itemTitle, newQuantity);
   }
 }
